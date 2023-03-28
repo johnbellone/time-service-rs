@@ -1,0 +1,19 @@
+[package]
+name = "time-service-client"
+version = "0.1.0"
+edition = "2021"
+repository = "https://github.com/johnbellone/time-service-rs/client"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.1.14", features = ["derive", "cargo", "env", "string"] }
+log = "0.4.17"
+prost = "0.11.8"
+tokio = { version = "1.27.0", features = ["macros", "rt-multi-thread", "full", "tracing", "stats"] }
+tonic = { version = "0.8.3", features = ["tls", "gzip"] }
+tracing = { version = "0.1.37", features = ["async-await", "log", "max_level_debug"] }
+tracing-subscriber = { version = "0.3.16", features = ["tracing", "tracing-serde", "env-filter", "serde", "serde_json"] }
+
+[build-dependencies]
+tonic-build = "0.8.4"

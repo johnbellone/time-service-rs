@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package time_service;
+
+service TimeService {
+    rpc GetCurrentTime (TimeRequest) returns (TimeResponse) {}
+}
+
+message TimeRequest {
+    bool utc = 1;
+}
+
+message TimeResponse {
+    string value = 1;
+}
